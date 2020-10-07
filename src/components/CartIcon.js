@@ -11,7 +11,7 @@ function CartIcon() {
         <div>
             <Button
                 variant="contained"
-                color="primary"
+           
                 startIcon={<ShoppingCartIcon />}
                 component={Link}
                 to={"/cart"}

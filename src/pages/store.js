@@ -15,7 +15,7 @@ function Store() {
     useEffect(() => {
         setInventory(inventoryData)
         dispatch(inventoryActions['ADD_INVENTORY'](inventoryData))
-    }, [])
+    }, [dispatch])
 
     return (
         <Container>
