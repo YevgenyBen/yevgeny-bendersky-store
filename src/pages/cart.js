@@ -1,11 +1,12 @@
 import React from 'react'
+import CartCard from '../components/CartCard'
 
-function cart() {
+function Cart() {
     return (
         <div>
-            
+            <CartCard/>
         </div>
     )
 }
 
-export default cart
+export default Cart

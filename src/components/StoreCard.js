@@ -13,7 +13,8 @@ function StoreCard({ product }) {
                 elevation={5}
                 className={"storeCard"}
                 component={Link}
-                to={{pathname: `/product`, query: {id:`${product.id}`}}}
+                // to={{pathname: `/product/${product.id}`, query: {id:`${product.id}`}}}
+                to={`/product/${product.id}`}
             >
                 <div className={"product-name"} > {product.name + " "} </div>
                 <div className={"product-price"} > {product.price} &#36; </div>

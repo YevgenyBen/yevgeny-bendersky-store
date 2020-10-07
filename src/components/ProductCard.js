@@ -2,10 +2,10 @@ import React from 'react'
 
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 
 import CartModifier from './CartModifier'
 import night from '../images/night.jpg'
-
 
 function ProductCard({ product }) {
     return (
@@ -20,7 +20,7 @@ function ProductCard({ product }) {
                         sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua.
                     </div>
-                    <CartModifier className={"product-amount"} product={product}/>
+                    <CartModifier className={"product-amount"} product={product} />
                     <img className={"product-image"} alt={"product"} src={night} ></img>
                 </Paper>
             </Container>

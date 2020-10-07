@@ -17,8 +17,8 @@ import Product from './pages/Product'
 function App() {
   return (
     <div className="App">
-      <Header/>
       <Router>
+        <Header/>
         <Switch>
           <Route exact path="/">
             <Store />
@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/cart">
             <Cart />
           </Route>
-          <Route path="/product">
+          <Route path="/product/:id">
             <Product />
           </Route>
         </Switch>
