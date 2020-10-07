@@ -7,13 +7,11 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import CartIcon from '../components/CartIcon'
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
     },
     title: {
       flexGrow: 1,
@@ -69,18 +67,7 @@ function Header() {
         <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
-          <div className={classes.search}>
+            <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -93,6 +80,10 @@ function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Material-UI
+          </Typography>
+          <CartIcon/>
         </Toolbar>
       </AppBar>
     </div>
