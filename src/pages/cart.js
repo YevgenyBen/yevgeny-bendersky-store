@@ -14,7 +14,7 @@ function Cart() {
         <CartCard products={productsInCart} />
         {productsInCart &&
           productsInCart.map((product, index) => (
-            <ProductCard product={product} key={index} />
+            <ProductCard product={product} key={index} inCart={true} />
           ))}
       </Container>
     </div>

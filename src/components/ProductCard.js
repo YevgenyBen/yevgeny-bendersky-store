@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 import CartModifier from "./CartModifier";
 import night from "../images/night.jpg";
 
-function ProductCard({ product }) {
+function ProductCard({ product, inCart }) {
   return (
     <div>
       <Container>
@@ -17,7 +17,11 @@ function ProductCard({ product }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
-          <CartModifier className={"product-amount"} product={product} />
+          <CartModifier
+            className={"product-amount"}
+            product={product}
+            inCart={inCart}
+          />
           <img
             className={"product-card-image"}
             alt={"product"}

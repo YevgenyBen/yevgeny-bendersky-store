@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     transform: `translate(-50%, -50%)`,
     display: "flex",
     outline: "none",
+    justifyContent: "space-between",
   },
   button: {
     margin: "5px",
@@ -35,14 +36,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CartModifier({ product }) {
+function CartModifier({ product, inCart }) {
   const classes = useStyles();
   const [amount, setAmount] = useState(0);
+
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   const handleAddToCart = () => {
@@ -58,6 +64,72 @@ function CartModifier({ product }) {
       setOpen(true);
     }
   };
+
+  const handleRemoveFromCart = () => {
+    dispatch(
+      cartActions["REMOVE_CART_ITEM"]({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        amount: amount,
+      })
+    );
+    setOpen(false);
+  };
+
+  const handleModifyAmount = () => {
+    if (amount !== 0) {
+      dispatch(
+        cartActions["MODIFY_ITEM_AMOUNT"]({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          amount: amount,
+        })
+      );
+    }
+  };
+
+  const modalBodyInShop = (
+    <div className={classes.paper}>
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        component={Link}
+        to={"/cart"}>
+        View Shoping Cart
+      </Button>
+      <Button
+        className={classes.button}
+        variant="outlined"
+        color="primary"
+        component={Link}
+        to={"/"}>
+        Continue Shoping
+      </Button>
+    </div>
+  );
+
+  const modalBodyInCart = (
+    <div className={classes.paper}>
+      <Button
+        onClick={handleClose}
+        className={classes.button}
+        variant="contained"
+        color="primary">
+        Cancel
+      </Button>
+      <Button
+        className={classes.button}
+        variant="outlined"
+        color="primary"
+        onClick={handleRemoveFromCart}>
+        Remove Item
+      </Button>
+    </div>
+  );
+
   return (
     <div>
       <Modal
@@ -65,37 +137,37 @@ function CartModifier({ product }) {
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description">
-        <div className={classes.paper}>
-          <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-            component={Link}
-            to={"/cart"}>
-            View Shoping Cart
-          </Button>
-          <Button
-            onClick={handleClose}
-            className={classes.button}
-            variant="outlined"
-            color="primary"
-            component={Link}
-            to={"/"}>
-            Continue Shoping
-          </Button>
-        </div>
+        {inCart ? modalBodyInCart : modalBodyInShop}
       </Modal>
       <div className={classes.amountModifier}>
         <Button
+          className={classes.button}
           disabled={amount === 0 ? true : false}
           onClick={() => setAmount((state) => state - 1)}>
           -
         </Button>
         <div>{amount} </div>
-        <Button onClick={() => setAmount((state) => state + 1)}>+</Button>
+        <Button
+          className={classes.button}
+          onClick={() => setAmount((state) => state + 1)}>
+          +
+        </Button>
       </div>
       <>
-        <Button onClick={handleAddToCart}>Add to cart</Button>
+        <Button
+          className={classes.button}
+          onClick={inCart ? handleOpen : handleAddToCart}>
+          {inCart ? "Remove Item" : "Add to cart"}
+        </Button>
+        {inCart ? (
+          <Button
+            className={classes.button}
+            variant="outlined"
+            color="primary"
+            onClick={handleModifyAmount}>
+            Modify Amount
+          </Button>
+        ) : null}
       </>
     </div>
   );
