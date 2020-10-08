@@ -6,6 +6,7 @@ import Modal from '@material-ui/core/Modal';
 import { Link } from "react-router-dom";
 
 import cartActions from '../redux/actions/cartActions'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
     amountModifier: {
@@ -92,7 +93,10 @@ function CartModifier({ product }) {
                     +
                 </Button>
             </div>
+           <>
+            <ShoppingCartIcon/>
             <Button onClick={handleAddToCart}>Add to cart</Button>
+            </>
         </div>
     )
 }

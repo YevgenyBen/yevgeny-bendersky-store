@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import CartModifier from './CartModifier'
 import night from '../images/night.jpg'
+import clock from '../images/clock.jpg'
+
 
 function ProductCard({ product }) {
     return (

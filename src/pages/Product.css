@@ -21,7 +21,7 @@
   grid-area: image;
   width: 100%;
   vertical-align: bottom;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 0px 0px 4px;
 }
 
 .product-name {
@@ -55,6 +55,10 @@
       "amount";
     grid-template-rows: 3fr 0.5fr 1fr 1fr 2fr;
     grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    border-radius: 4px 4px 0px 0px;
   }
 }
 
