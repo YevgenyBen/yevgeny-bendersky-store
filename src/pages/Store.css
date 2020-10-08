@@ -1,49 +1,48 @@
-*{
-    text-decoration: none;
+* {
+  text-decoration: none;
 }
-.wrapper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .storeCard {
-    width: 300px;
-    margin: auto;
-    margin-top: 25px;
-    display: grid;  
-    grid-template-areas:
-      "image"
-      "name"
-      "price";
-    grid-template-rows: 4fr 1fr 1fr;
-    grid-template-columns: 1fr;
-    cursor: pointer;
+  width: 300px;
+  margin: auto;
+  margin-top: 25px;
+  display: grid;
+  grid-template-areas:
+    "image"
+    "name"
+    "price";
+  grid-template-rows: 4fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  cursor: pointer;
+}
+
+.product-card-image {
+  grid-area: image;
+  width: 100%;
+  vertical-align: bottom;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.product-name {
+  grid-area: name;
+  display: flex;
+  place-self: center;
+  font-size: 30px;
+}
+
+.product-price {
+  grid-area: price;
+  display: flex;
+  place-self: center;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+  .storeCard {
+    margin-top: 10px;
   }
-  
-  .product-image {
-    grid-area:image;
-    width: 100%;
-    vertical-align: bottom;
-    border-radius: 4px 4px 4px 4px;
-  }
-  
-  .product-name{
-    grid-area:name;
-    display: flex;
-    place-self: center;
-    font-size: 30px;
-  }
-  
-  .product-price{
-    grid-area:price;
-    display: flex;
-    place-self: center;
-    font-size: 20px;
-  }
- 
-  @media only screen and (max-width: 400px) {
-    .storeCard {
-      margin-top: 10px;
-    }
-  }
-  
+}
