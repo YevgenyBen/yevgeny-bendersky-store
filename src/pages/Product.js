@@ -1,7 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Redirect, useLocation } from "react-router-dom";
 
 import ProductCard from "../components/ProductCard";
 import "./Product.css";
@@ -9,7 +8,6 @@ import "./Product.css";
 function Product() {
   const allProducts = useSelector((state) => state.inventoryReducer);
   const location = useLocation();
-
   const selectedProduct = allProducts.find(
     (product) =>
       product.id ==

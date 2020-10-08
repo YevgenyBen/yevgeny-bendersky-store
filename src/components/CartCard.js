@@ -1,24 +1,17 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
 
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
+import Paper from "@material-ui/core/Paper";
 
-function CartCard() {
-    const productsInCart = useSelector((state) => state.cartReducer );
-    const subTotal=productsInCart.reduce((total,item)=>{
-        return total+item.price*item.amount
-    },0)
-    console.log(subTotal)
-    return (
-        <div>
-            <Container>
-                <Paper>
-                    subtotal:{subTotal}
-                </Paper>
-            </Container>
-        </div>
-    )
+function CartCard({ products }) {
+  // const productsInCart = useSelector((state) => state.cartReducer );
+  const subTotal = products.reduce((total, item) => {
+    return total + item.price * item.amount;
+  }, 0);
+  return (
+    <div>
+      <Paper>subtotal:{subTotal}</Paper>
+    </div>
+  );
 }
 
-export default CartCard
+export default CartCard;

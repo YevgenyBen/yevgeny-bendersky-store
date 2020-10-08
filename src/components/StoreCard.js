@@ -15,7 +15,7 @@ function StoreCard({ product }) {
         to={`/product/${product.id}`}>
         <div className={"product-name"}> {product.name + " "} </div>
         <div className={"product-price"}> {product.price} &#36; </div>
-        <img className={"product-card-image"} alt={"product"} src={night}></img>
+        <img className={"product-image"} alt={"product"} src={night}></img>
       </Paper>
     </>
   );

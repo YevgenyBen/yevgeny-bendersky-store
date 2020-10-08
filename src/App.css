@@ -1,6 +1,11 @@
 .App {
   text-align: center;
   background-color: wheat;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+* {
+  text-decoration: none;
 }
