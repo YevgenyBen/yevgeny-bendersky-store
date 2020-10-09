@@ -5,6 +5,9 @@
   max-height: 100%;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+.MuiToolbar-root{
+  justify-content: space-between;
+}
 
 * {
   text-decoration: none;

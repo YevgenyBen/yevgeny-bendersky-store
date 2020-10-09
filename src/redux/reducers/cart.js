@@ -4,12 +4,12 @@ const cartReducer = (state = [], action) => {
     case "ADD_CART_ITEM":
       return state.find((item) => item.id === action.payload.id)
         ? [
-            ...state.map((item) =>
-              item.id === action.payload.id
-                ? { ...item, amount: item.amount + action.payload.amount }
-                : item
-            ),
-          ]
+          ...state.map((item) =>
+            item.id === action.payload.id
+              ? { ...item, amount: item.amount + action.payload.amount }
+              : item
+          ),
+        ]
         : [...state, action.payload];
 
     case "REMOVE_CART_ITEM":

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 
 function CartCard({ products }) {
   // const productsInCart = useSelector((state) => state.cartReducer );
@@ -8,9 +9,10 @@ function CartCard({ products }) {
     return total + item.price * item.amount;
   }, 0);
   return (
-    <div>
-      <Paper>subtotal:{subTotal}</Paper>
-    </div>
+    <Paper className="cart-card">
+        <div className="total">  subtotal:{" "+subTotal.toLocaleString()+" "}&#36;</div>
+        <Button className="buy-button" color="primary">Buy these items</Button>
+    </Paper>
   );
 }
 

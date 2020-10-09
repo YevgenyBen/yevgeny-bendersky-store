@@ -7,25 +7,25 @@ import "./Store.css";
 
 import { inventory as inventoryData } from "../mock-data/Inventory.json";
 function Store() {
-  const [inventory, setInventory] = useState([]);
-  const dispatch = useDispatch();
+    const [inventory, setInventory] = useState([]);
+    const dispatch = useDispatch();
 
-  //mock data fetching instead of actual API call
-  useEffect(() => {
-    setInventory(inventoryData);
-    dispatch(inventoryActions["ADD_INVENTORY"](inventoryData));
-  }, [dispatch]);
+    //mock data fetching instead of actual API call
+    useEffect(() => {
+        setInventory(inventoryData);
+        dispatch(inventoryActions["ADD_INVENTORY"](inventoryData));
+    }, [dispatch]);
 
-  return (
-    <Container>
-      <div className={"wrapper"}>
-        {inventory &&
-          inventory.map((product, index) => (
-            <StoreCard product={product} key={index} />
-          ))}
-      </div>
-    </Container>
-  );
+    return (
+        <Container>
+            <div className={"wrapper"}>
+                {inventory &&
+                    inventory.map((product, index) => (
+                        <StoreCard product={product} key={index} />
+                    ))}
+            </div>
+        </Container>
+    );
 }
 
 export default Store;

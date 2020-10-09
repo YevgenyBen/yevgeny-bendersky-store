@@ -11,7 +11,8 @@ function Cart() {
   return (
     <div>
       <Container>
-        <CartCard products={productsInCart} />
+        <h2 className="cart-title">Cart</h2>
+        <CartCard className={"cart-card"} products={productsInCart} />
         {productsInCart &&
           productsInCart.map((product, index) => (
             <ProductCard product={product} key={index} inCart={true} />

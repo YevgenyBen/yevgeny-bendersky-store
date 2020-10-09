@@ -1,0 +1,25 @@
+.cart-card {
+    width: 300px;
+    margin: auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-areas:
+      "total"
+      "buy-button";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr ;
+  }
+  .total{
+      grid-area: total;
+      padding: 10px;
+  }
+  .buy-button{
+      grid-area: buy-button;
+      margin-bottom: 10px;
+  }
+
+  /* @media only screen and (max-width: 950px) {
+    .product-card {
+      width: 300px;
+    } */
+  

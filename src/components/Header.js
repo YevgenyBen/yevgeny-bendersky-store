@@ -7,37 +7,35 @@ import CartIcon from "../components/CartIcon";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-    color: "white",
-  },
-  appBar: {
-    backgroundColor: "#005361",
-  },
+    root: {
+    },
+    title: {
+        color: "white",
+    },
+    appBar: {
+        backgroundColor: "#005361",
+    },
 }));
 
 function Header() {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-          <Typography
-            className={classes.title}
-            variant="h6"
-            noWrap
-            component={Link}
-            to={"/"}>
-            Kornit Digital Demo Store
-          </Typography>
-          <CartIcon />
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+    const classes = useStyles();
+    return (
+        <div className={classes.root}>
+            <AppBar position="static" className={classes.appBar}>
+                <Toolbar>
+                    <Typography
+                        className={classes.title}
+                        variant="h6"
+                        noWrap
+                        component={Link}
+                        to={"/"}>
+                        Kornit Digital Demo Store
+                    </Typography>
+                    <CartIcon />
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
 }
 
 export default Header;

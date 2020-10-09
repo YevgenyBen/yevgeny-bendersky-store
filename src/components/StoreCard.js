@@ -14,7 +14,7 @@ function StoreCard({ product }) {
         // to={{pathname: `/product/${product.id}`, query: {id:`${product.id}`}}}
         to={`/product/${product.id}`}>
         <div className={"product-name"}> {product.name + " "} </div>
-        <div className={"product-price"}> {product.price} &#36; </div>
+        <div className={"product-price"}> {product.price.toLocaleString()} &#36; </div>
         <img className={"product-image"} alt={"product"} src={night}></img>
       </Paper>
     </>
