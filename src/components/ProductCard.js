@@ -1,12 +1,10 @@
 import React from "react";
-
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
-
 import CartModifier from "./CartModifier";
-import night from "../images/night.jpg";
 
 function ProductCard({ product, inCart }) {
+
     return (
         <div>
             <Container>
@@ -25,7 +23,8 @@ function ProductCard({ product, inCart }) {
                     <img
                         className={"product-card-image"}
                         alt={"product"}
-                        src={night}></img>
+                        src={window.location.origin + `/images/${product.id}.jpg`} />
+
                 </Paper>
             </Container>
         </div>

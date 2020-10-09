@@ -1,7 +1,6 @@
 .product-card {
   width: 900px;
-  margin: auto;
-  margin-top: 25px;
+  margin: 25px auto 25px;
   display: grid;
   grid-template-areas:
     "image name"

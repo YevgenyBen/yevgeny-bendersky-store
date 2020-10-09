@@ -7,7 +7,6 @@ import "./Cart.css";
 
 function Cart() {
   const productsInCart = useSelector((state) => state.cartReducer);
-  console.log(productsInCart);
   return (
     <div>
       <Container>

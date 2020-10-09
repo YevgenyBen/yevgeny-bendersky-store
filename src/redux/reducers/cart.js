@@ -1,5 +1,4 @@
 const cartReducer = (state = [], action) => {
-  console.log("state", state);
   switch (action.type) {
     case "ADD_CART_ITEM":
       return state.find((item) => item.id === action.payload.id)

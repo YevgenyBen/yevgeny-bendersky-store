@@ -3,26 +3,26 @@
     {
       "id": 1,
       "amount": 100,
-      "name": "Clock",
-      "price": 1500
+      "name": "Nike Air Max 2090",
+      "price": 150
     },
     {
       "id": 2,
       "amount": 100,
-      "name": "City",
-      "price": 15000
+      "name": "Rio de Janeiro",
+      "price": 895000
     },
     {
       "id": 3,
       "amount": 1000,
-      "name": "Shoes",
-      "price": 150
+      "name": "The Moon",
+      "price": 12
     },
     {
       "id": 4,
       "amount": 1000,
-      "name": "Hat",
-      "price": 15
+      "name": "Stan the Giraffe",
+      "price": 99999
     },
     {
       "id": 5,

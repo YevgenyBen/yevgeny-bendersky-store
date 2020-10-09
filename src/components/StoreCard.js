@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
-
-import night from "../images/night.jpg";
 
 function StoreCard({ product }) {
   return (
@@ -11,11 +9,11 @@ function StoreCard({ product }) {
         elevation={5}
         className={"storeCard"}
         component={Link}
-        // to={{pathname: `/product/${product.id}`, query: {id:`${product.id}`}}}
         to={`/product/${product.id}`}>
         <div className={"product-name"}> {product.name + " "} </div>
         <div className={"product-price"}> {product.price.toLocaleString()} &#36; </div>
-        <img className={"product-image"} alt={"product"} src={night}></img>
+        {/* <img src={`/icons/${iconNumber}.png`} alt='weather-icon'/> */}
+        <img className={"product-image"} alt={"product"} src={window.location.origin + `/images/${product.id}.jpg`}></img>
       </Paper>
     </>
   );

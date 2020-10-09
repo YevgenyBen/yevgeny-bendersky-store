@@ -5,8 +5,7 @@
 }
 .storeCard {
   width: 300px;
-  margin: auto;
-  margin-top: 25px;
+  margin: 25px auto 25px;
   display: grid;
   grid-template-areas:
     "image"

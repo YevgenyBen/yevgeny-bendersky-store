@@ -18,8 +18,8 @@ function Product() {
       {selectedProduct ? (
         <ProductCard product={selectedProduct} />
       ) : (
-        <Redirect to="/" />
-      )}
+          <Redirect to="/" />
+        )}
     </div>
   );
 }
